@@ -457,7 +457,7 @@ class DwfAnalogOut(Dwf):
     def waitSet(self, idxChannel, secWait):
         _l.FDwfAnalogOutWaitSet(self.hdwf, idxChannel, secWait)
     def waitGet(self, idxChannel):
-        return _l.FDwfAnalogOutWaitGet(self, idxChannel)
+        return _l.FDwfAnalogOutWaitGet(self.hdwf, idxChannel)
 
     def repeatInfo(self, idxChannel):
         return _l.FDwfAnalogOutRepeatInfo(self.hdwf, idxChannel)
@@ -659,7 +659,7 @@ class DwfDigitalIO(Dwf):
             super(DwfDigitalIO, self).__init__(idxDevice, idxCfg)
     def reset(self, parent=False):
         if parent: super(DwfDigitalIO, self).reset()
-        _l.FDwfDigitalIOReset(sef_l.hdwf)
+        _l.FDwfDigitalIOReset(self.hdwf)
     def configure(self):
         return _l.FDwfDigitalIOConfigure(self.hdwf)
     def status(self):
@@ -667,7 +667,7 @@ class DwfDigitalIO(Dwf):
 
 # Configure:
     def outputEnableInfo(self):
-        return _l.FDwfDigitalIOOutputEnableInfo(self)
+        return _l.FDwfDigitalIOOutputEnableInfo(self.hdwf)
     def outputEnableSet(self, output_enable):
         _l.FDwfDigitalIOOutputEnableSet(self.hdwf, output_enable)
     def outputEnableGet(self):
