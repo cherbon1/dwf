@@ -171,6 +171,10 @@ class Dwf(object):
         return self.TRIGSRC(_l.FDwfDeviceTriggerGet(self.hdwf, idxPin))
     def triggerPC(self):
         _l.FDwfDeviceTriggerPC(self.hdwf)
+    def paramSet(self, param, value):
+        _l.FDwfDeviceParamSet(self.hdwf, param, value)
+    def paramGet(self, param):
+        return int(_l.FDwfDeviceParamGet(self.hdwf, param))
 
 # ANALOG IN INSTRUMENT FUNCTIONS
 class DwfAnalogIn(Dwf):
