@@ -367,6 +367,14 @@ _define("FDwfDeviceTriggerGet",
 #  FDwfDeviceTriggerPC(HDWF hdwf);
 _define("FDwfDeviceTriggerPC",
         (HDWF,), ((_ARGIN, "hdwf"),))
+#  FDwfDeviceParamSet(HDWF hdwf, int(DwfParam) param, int value);
+_define("FDwfDeviceParamSet",
+        (HDWF, c_int, c_int,),
+        ((_ARGIN, "hdwf"), (_ARGIN, "param"), (_ARGIN, "value"),))
+#  FDwfDeviceParamGet(HDWF hdwf, int(DwfParam) param, int *pvalue);
+_define("FDwfDeviceParamGet",
+        (HDWF, c_int, POINTER(c_int),),
+        ((_ARGIN, "hdwf"), (_ARGIN, "param"), (_ARGOUT, "pvalue"),))
 
 
 # ANALOG IN INSTRUMENT FUNCTIONS
