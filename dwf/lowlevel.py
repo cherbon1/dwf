@@ -275,6 +275,16 @@ def FDwfGetVersion(szVersion=None):
     szVersion = create_string_buffer(32)
     _FDwfGetVersion(szVersion)
     return _mkstring(szVersion)
+#  FDwfParamSet(int(DwfParam) param, int value);
+# configure global parameters that will be applied on newly opened devices
+_define("FDwfParamSet",
+		(c_int, c_int,),
+		((_ARGIN, "param"), (_ARGIN, "value"),) )
+#  FDwfParamGet(int(DwfParam) param, int *pvalue);
+# retrieves the parameter value
+_define("FDwfParamGet",
+		(c_int, POINTER(c_int),),
+		((_ARGIN, "param"), (_ARGOUT, "pvalue"),) )
 
 # DEVICE MANAGMENT FUNCTIONS
 # Enumeration:
