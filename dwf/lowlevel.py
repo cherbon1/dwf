@@ -349,12 +349,12 @@ _define("FDwfDeviceClose",
         (HDWF,), ((_ARGIN, "hdwf"),))
 #  FDwfDeviceCloseAll();
 _define("FDwfDeviceCloseAll", (), ())
-#  FDwfDeviceAutoConfigureSet(HDWF hdwf, BOOL fAutoConfigure);
+#  FDwfDeviceAutoConfigureSet(HDWF hdwf, int fAutoConfigure);
 _define("FDwfDeviceAutoConfigureSet",
-        (HDWF, BOOL,), ((_ARGIN, "hdwf"), (_ARGIN, "fAutoConfigure"),))
-#  FDwfDeviceAutoConfigureGet(HDWF hdwf, BOOL *pfAutoConfigure);
+        (HDWF, c_int,), ((_ARGIN, "hdwf"), (_ARGIN, "fAutoConfigure"),))
+#  FDwfDeviceAutoConfigureGet(HDWF hdwf, int *pfAutoConfigure);
 _define("FDwfDeviceAutoConfigureGet",
-        (HDWF, POINTER(BOOL),),
+        (HDWF, POINTER(c_int),),
         ((_ARGIN, "hdwf"), (_ARGOUT, "pfAutoConfigure"),))
 #  FDwfDeviceReset(HDWF hdwf);
 _define("FDwfDeviceReset",
@@ -1011,9 +1011,9 @@ _define("FDwfAnalogOutCustomAMFMEnableGet",
 #  FDwfAnalogOutReset(HDWF hdwf, int idxChannel);
 _define("FDwfAnalogOutReset",
         (HDWF, c_int,), ((_ARGIN, "hdwf"), (_ARGIN, "idxChannel"),))
-#  FDwfAnalogOutConfigure(HDWF hdwf, int idxChannel, BOOL fStart);
+#  FDwfAnalogOutConfigure(HDWF hdwf, int idxChannel, int fStart);
 _define("FDwfAnalogOutConfigure",
-        (HDWF, c_int, BOOL,),
+        (HDWF, c_int, c_int,),
         ((_ARGIN, "hdwf"), (_ARGIN, "idxChannel"), (_ARGIN, "fStart"),))
 #  FDwfAnalogOutStatus(HDWF hdwf, int idxChannel, DwfState *psts);
 _define("FDwfAnalogOutStatus",
