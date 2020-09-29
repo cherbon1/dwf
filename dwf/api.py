@@ -158,7 +158,7 @@ class Dwf(object):
     def autoConfigureSet(self, auto_configure):
         _l.FDwfDeviceAutoConfigureSet(self.hdwf, auto_configure)
     def autoConfigureGet(self):
-        return bool(_l.FDwfDeviceAutoConfigureGet(self.hdwf))
+        return int(_l.FDwfDeviceAutoConfigureGet(self.hdwf))
     def reset(self):
         _l.FDwfDeviceReset(self.hdwf)
     def enableSet(self, enable):
