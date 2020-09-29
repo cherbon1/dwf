@@ -532,15 +532,7 @@ class DwfAnalogOut(Dwf):
     def nodeAmplitudeSet(self, idxChannel, node, amplitude):
         _l.FDwfAnalogOutNodeAmplitudeSet(self.hdwf, idxChannel, node, amplitude)
     def nodeAmplitudeGet(self, idxChannel, node):
-        return _l.FDwfAnalogOutNodeAmplitudeSet(self.hdwf, idxChannel, node)
-
-    def nodeModulationInfo(self, idxChannel, node):
-        return _l.FDwfAnalogOutNodeAmplitudeInfo(self, idxChannel, node)
-    def nodeModulationSet(self, idxChannel, node, modulation):
-        _l.FDwfAnalogOutNodeAmplitudeSet(
-            self.hdwf, idxChannel, node, modulation)
-    def nodeModulationGet(self, idxChannel, node):
-        return _l.FDwfAnalogOutNodeAmplitudeSet(self.hdwf, idxChannel, node)
+        return _l.FDwfAnalogOutNodeAmplitudeGet(self.hdwf, idxChannel, node)
 
     def nodeOffsetInfo(self, idxChannel, node):
         return _l.FDwfAnalogOutNodeOffsetInfo(self.hdwf, idxChannel, node)
